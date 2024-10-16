@@ -1,12 +1,13 @@
 # This is the test file for stockfish
 import chess
 from stockfish import Stockfish
+from opencv_test_code import *
 
 # This will create a new chess board
 board = chess.Board()
 
 # Initialize the Stockfish engine using the stockfish package
-stockfish = Stockfish("/Users/user/OneDrive/Desktop/stockfish/stockfish")
+stockfish = Stockfish("C:\\Users\\user\\OneDrive\\Desktop\\stockfish\\stockfish")
 
 # Function to get the best move from Stockfish
 def get_best_move(fen_string):
@@ -93,11 +94,14 @@ def play_game():
 
         # AI's turn
         print("AI's move:")
-        ai_move(board)
+        ai_best_move = ai_move(board)
 
         # Check game state after AI's move
         if board.is_game_over():
             break
+
+        # Highlight AI's move using OpenCV
+        highlight_move(ai_best_move, cap)  # Call the OpenCV function and pass the move
 
     print("Final board position:")
     print(board)
