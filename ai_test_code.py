@@ -1,13 +1,13 @@
 # This is the test file for stockfish
 import chess
 from stockfish import Stockfish
-from opencv_test_code import *
+from opencv_test_code_2 import *
 
 # This will create a new chess board
 board = chess.Board()
 
 # Initialize the Stockfish engine using the stockfish package
-stockfish = Stockfish("C:\\Users\\user\\OneDrive\\Desktop\\stockfish\\stockfish")
+stockfish = Stockfish("C:\\Users\\user\\OneDrive\\Desktop\\stockfish\\stockfish\\stockfish-windows-x86-64-avx2.exe")
 
 # Function to get the best move from Stockfish
 def get_best_move(fen_string):
@@ -59,12 +59,6 @@ def user_move(board):
             print("Invalid input format. Please enter a move in UCI format.")
         except Exception as e:
             print(f"Error occurred while processing user move: {e}")
-
-# Get the best move from the engine
-# best_move = stockfish.get_best_move()
-
-# Make the move on the board
-# board.push(best_move)
 
 # Main game loop: User vs AI
 def play_game():
