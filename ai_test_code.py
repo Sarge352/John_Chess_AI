@@ -101,10 +101,7 @@ def play_game():
     print(board)
     print("Game over.")
 
-# Run the game
-play_game()
 
 
-#test
 
 
